@@ -508,10 +508,21 @@ button {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.map-card.is-expanded .map-card__expand svg {
-  transform: rotate(180deg);
+.map-card__expand .icon-close,
+.map-card.is-expanded .map-card__expand .icon-open {
+  display: none;
+}
+.map-card.is-expanded .map-card__expand .icon-close {
+  display: block;
 }
 
+/* Lift the hero (and the map inside it) above everything while expanded */
+.map-open .hero {
+  z-index: 300;
+}
+.map-open .hero__inner {
+  z-index: 10;
+}
 .map-card.is-expanded {
   position: fixed;
   inset: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom));
@@ -657,7 +668,7 @@ button {
   }
   .hero__title {
     align-self: auto;
-    margin: 0 0 6% -6%;
+    margin: 0 0 5% -2%;
   }
 }
 
@@ -668,6 +679,15 @@ button {
   .hero__copy {
     align-items: flex-start;
     text-align: left;
+  }
+  .hero__brand {
+    width: min(100%, 44rem);
+  }
+  .hero__logo {
+    width: 55%;
+  }
+  .hero__title {
+    font-size: clamp(2.75rem, 5vw, 6rem);
   }
   .hero__links {
     justify-content: flex-start;

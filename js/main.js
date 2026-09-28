@@ -212,7 +212,7 @@
 
     const home = L.divIcon({ className: "home-marker", iconSize: [16, 16] });
     L.marker([EVENT.lat, EVENT.lng], { icon: home, zIndexOffset: 1000, title: EVENT.name, keyboard: false })
-      .bindTooltip("You’re here!", { permanent: true, direction: "top", offset: [0, -10], className: "home-tooltip" })
+      .bindTooltip("You’re here!", { permanent: true, direction: "left", offset: [-6, 0], className: "home-tooltip" })
       .addTo(map);
 
     // Enable scroll-zoom only after the user interacts with the map
@@ -244,6 +244,7 @@
     const setExpanded = (on) => {
       mapCard.classList.toggle("is-expanded", on);
       expandBtn.setAttribute("aria-label", on ? "Close full-screen map" : "Expand map");
+      document.documentElement.classList.toggle("map-open", on);
       document.body.style.overflow = on ? "hidden" : "";
       if (map) {
         on ? map.dragging.enable() : matchMedia("(pointer: coarse)").matches && map.dragging.disable();
