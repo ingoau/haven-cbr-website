@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Haven Canberra — a game jam for teens, Nov 14–15</title>
+    <meta name="description" content="Hack Club Haven Canberra: a free, weekend-long game jam for teens aged 13–18. Make a video game with friends, learn from workshops, and eat free food. November 14–15 in Canberra." />
+    <meta name="theme-color" content="#fa681b" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Haven Canberra — a game jam for teens" />
+    <meta property="og:description" content="A free weekend game jam for teens 13–18. Nov 14–15 in Canberra." />
+    <meta property="og:image" content="images/haven-logo-color.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Jua&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="images/hero/hero-bg-no-sticky-tree.webp" fetchpriority="high" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>document.documentElement.classList.add("js")</script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ───────────── Navigation ───────────── -->
+    <header class="nav" data-nav>
+      <a class="nav__brand" href="#top" aria-label="Haven Canberra — back to top">
+        <img src="images/logo.webp" alt="" width="762" height="491" />
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a href="#about">About</a></li>
+          <li class="hide-sm"><a href="#steps">How it works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a class="nav__cta" href="#signup">Sign up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- ───────────── Hero ───────────── -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img class="hero__leaves" src="images/nav-banner.png" alt="" aria-hidden="true" width="627" height="266" />
+
+        <div class="hero__inner">
+          <div class="hero__copy">
+            <div class="hero__brand">
+              <img class="hero__logo" src="images/logo.webp" alt="Hack Club Haven" width="762" height="491" />
+              <h1 class="hero__title" id="hero-title">Canberra</h1>
+            </div>
+
+            <p class="hero__tagline">
+              <span>Game jam for teens 13–18</span>
+              <span>Nov 14–15 · Canberra</span>
+            </p>
+
+            <p class="hero__countdown" data-countdown hidden></p>
+
+            <form class="signup" id="signup" method="get" action="https://forms.hackclub.com/haven-signup">
+              <input type="hidden" name="event" value="recMj0szod8LoeaUT" />
+              <label for="signup-email" class="sr-only">Your email address</label>
+              <input id="signup-email" class="signup__input" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="you@hackclub.com" />
+              <button class="signup__button" type="submit">Sign up!</button>
+            </form>
+
+            <div class="hero__links">
+              <a href="#" data-ics>Add to calendar</a>
+              <span aria-hidden="true">·</span>
+              <a href="https://haven.hackclub.com/api/auth/redirect">Organise your own Haven</a>
+            </div>
+          </div>
+
+          <div class="hero__map">
+            <p class="hero__map-label" aria-hidden="true">
+              find an event near you
+              <img src="images/hero/hero-arrow.webp" alt="" width="341" height="160" />
+            </p>
+            <div class="map-card" data-map-card>
+              <div class="map-card__canvas" data-map role="region" aria-label="Map of Haven game jams around the world"></div>
+              <button class="map-card__expand" type="button" data-map-expand aria-label="Expand map">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" /></svg>
+              </button>
+              <noscript><p class="map-card__fallback">Enable JavaScript to see the map of Haven events.</p></noscript>
+            </div>
+            <p class="hero__map-count"><span data-event-count>280+</span> Haven jams worldwide — <a href="https://haven.hackclub.com">see them all</a></p>
+          </div>
+        </div>
+
+        <a class="hero__more" href="#about">
+          <span>more info</span>
+          <img src="images/triangle-down.svg" alt="" aria-hidden="true" width="207" height="69" />
+        </a>
+
+        <img class="hero__hedgehog" src="images/hedgehog.webp" alt="" aria-hidden="true" width="422" height="308" />
+        <img class="hero__foreground" src="images/hero-foreground.webp" alt="" aria-hidden="true" width="1414" height="501" />
+      </section>
+
+      <!-- ───────────── About + Pitch (meadow) ───────────── -->
+      <div class="meadow">
+        <section class="about" id="about" aria-labelledby="about-title">
+          <div class="about__intro reveal">
+            <h2 id="about-title">What is a game jam?</h2>
+            <p>It’s a social coding event where you make a video game with friends&nbsp;+&nbsp;free&nbsp;food!</p>
+            <button class="pill-button" type="button" data-video="8tNEPMI5wss" data-video-title="Haven intro video">
+              <img src="images/play-triangle-1.svg" alt="" aria-hidden="true" width="72" height="65" />
+              Watch the intro video
+            </button>
+          </div>
+
+          <ul class="perks">
+            <li class="perk reveal">
+              <span class="perk__branch" aria-hidden="true"></span>
+              <article class="sign">
+                <h3 class="sign__title">Learn &amp; Build</h3>
+                <div class="sign__body">
+                  <div class="sign__photos">
+                    <a href="https://i1rs7.itch.io/return-to-the-sender" target="_blank" rel="noopener">
+                      <img src="images/projects-1.webp" alt="Return to the Sender, a game made at a past event" loading="lazy" width="960" height="646" />
+                      <span><b>return to the sender</b> by i1rs7</span>
+                    </a>
+                    <a href="https://theavgeekbee.itch.io/office-click-clack" target="_blank" rel="noopener">
+                      <img src="images/projects-3.webp" alt="Office Click Clack, a game made at a past event" loading="lazy" width="315" height="250" />
+                      <span><b>office click clack</b> by bunnyguy &amp; nathan</span>
+                    </a>
+                  </div>
+                  <p>follow workshops or create at your own pace</p>
+                </div>
+              </article>
+            </li>
+            <li class="perk perk--right reveal">
+              <span class="perk__branch" aria-hidden="true"></span>
+              <article class="sign">
+                <h3 class="sign__title">Make Friends</h3>
+                <div class="sign__body">
+                  <div class="sign__photos">
+                    <img src="images/friends-1.webp" alt="Attendees hanging out together" loading="lazy" width="700" height="525" />
+                    <img src="images/friends-2.webp" alt="A group of teens working at a shared table" loading="lazy" width="700" height="466" />
+                  </div>
+                  <p>meet new people and form lifelong friendships</p>
+                </div>
+              </article>
+            </li>
+            <li class="perk reveal">
+              <span class="perk__branch" aria-hidden="true"></span>
+              <article class="sign">
+                <h3 class="sign__title">Free Food &amp; Prizes</h3>
+                <div class="sign__body">
+                  <div class="sign__photos">
+                    <img src="images/food-1.webp" alt="A spread of snacks and merch" loading="lazy" width="700" height="466" />
+                    <img src="images/food-3.webp" alt="Attendees holding up their prizes" loading="lazy" width="700" height="466" />
+                  </div>
+                  <p>can’t say no to free snacks :)</p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section class="pitch" aria-labelledby="pitch-title">
+          <h2 class="pitch__title reveal" id="pitch-title">Don’t game jams sound awesome?</h2>
+          <div class="pitch__stage">
+            <div class="pitch__bubbles">
+              <p class="bubble bubble--a reveal">
+                This November, <mark>YOU can join the world’s largest teen game jam.</mark> Yes, you! It doesn’t matter if you have years of experience, or just learned what they are today.
+              </p>
+              <p class="bubble bubble--b reveal">
+                You’ll <mark>join thousands of teens</mark> making games from all around the world. Don’t consider yourself a game dev? No problem — we have tons of workshops to help you make your game!
+              </p>
+              <p class="bubble bubble--c reveal">
+                This is your chance to <mark>learn something new,</mark> <mark>meet new friends,</mark> and <mark>go on an incredible adventure together!</mark>
+              </p>
+            </div>
+            <img class="pitch__daven" src="images/pitch/excited-daven.webp" alt="" aria-hidden="true" loading="lazy" width="791" height="695" />
+          </div>
+        </section>
+      </div>
+
+      <!-- ───────────── Steps ───────────── -->
+      <section class="steps" id="steps" aria-labelledby="steps-title">
+        <img class="steps__flowers steps__flowers--tl" src="images/steps/flowers-top-l.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img class="steps__flowers steps__flowers--tr" src="images/steps/flowers-top-r.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img class="steps__flowers steps__flowers--bl" src="images/steps/flowers-bottom-l.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img class="steps__flowers steps__flowers--br" src="images/steps/flowers-bottom-r.webp" alt="" aria-hidden="true" loading="lazy" />
+
+        <div class="steps__head reveal">
+          <h2 id="steps-title">Here’s how you can join a game jam this November!</h2>
+          <p>(Don’t worry, we’ll guide you through each step)</p>
+        </div>
+
+        <div class="notebook reveal">
+          <ol class="notebook__page">
+            <li class="step">
+              <h3><span class="step__num">1</span><span>Sign up for a <em>Haven</em> near you</span></h3>
+              <figure class="step__photo"><img src="images/steps/photos/step-1.webp" alt="Teens standing in a row at a past Haven event" loading="lazy" width="802" height="338" /></figure>
+            </li>
+            <li class="step">
+              <h3><span class="step__num">2</span><span>Meet <em>friends</em> and join a team (or work alone!)</span></h3>
+              <figure class="step__photo"><img src="images/steps/photos/step-2.webp" alt="An attendee giving two thumbs up in a workshop space" loading="lazy" width="788" height="383" /></figure>
+            </li>
+          </ol>
+          <div class="notebook__rings" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <ol class="notebook__page" start="3">
+            <li class="step">
+              <h3><span class="step__num">3</span><span>Learn from <em>workshops</em>, enjoy free <em>food and merch</em>!</span></h3>
+              <figure class="step__photo"><img src="images/steps/photos/step-3.webp" alt="Orange Campfire trophies for first, second and third place" loading="lazy" width="725" height="338" /></figure>
+            </li>
+            <li class="step">
+              <h3><span class="step__num">4</span><span>Build your game &amp; <em>publish</em> it on itch.io</span></h3>
+              <figure class="step__photo"><img src="images/steps/photos/step-4.webp" alt="A crowd watching a game being demoed on a big screen" loading="lazy" width="739" height="397" /></figure>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ───────────── Schedule ───────────── -->
+      <section class="schedule" id="schedule" aria-labelledby="schedule-title">
+        <div class="trail">
+          <img class="trail__plant trail__plant--tl" src="images/schedule/side-plants-2.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="trail__plant trail__plant--br" src="images/schedule/side-plants-1.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="trail__sheep" src="images/schedule/sheep.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="trail__daven" src="images/schedule/daven-smol.webp" alt="" aria-hidden="true" loading="lazy" />
+
+          <div class="schedule__box reveal">
+            <img class="schedule__plant schedule__plant--l" src="images/schedule/plant-l.webp" alt="" aria-hidden="true" loading="lazy" />
+            <img class="schedule__plant schedule__plant--r" src="images/schedule/plant-r.webp" alt="" aria-hidden="true" loading="lazy" />
+            <h2 id="schedule-title">What happens on the day?</h2>
+            <div class="schedule__panel">
+              <p class="schedule__tbd">TBD!</p>
+              <p>We’re still working out the schedule. <a href="#signup">Sign up</a> and we’ll let you know as soon as we figure it out!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── Past events ───────────── -->
+      <section class="picnic" aria-labelledby="past-title">
+        <h2 class="picnic__title reveal" id="past-title">
+          <span>Hack Club has helped teens organise hundreds of events worldwide!</span>
+          <span>Check out some of our past events ~</span>
+        </h2>
+        <ul class="polaroids">
+          <li class="polaroid reveal" style="--tilt: -4deg">
+            <h3>Scrapyard</h3>
+            <button class="polaroid__video" type="button" data-video="8iM1W8kXrQA" data-video-title="Scrapyard">
+              <img src="images/scrapyard-pic.webp" alt="" loading="lazy" width="700" height="466" />
+              <span class="play" aria-hidden="true"></span>
+              <span class="sr-only">Watch the Scrapyard video</span>
+            </button>
+            <p>Build wacky stuff, get wacky prizes! In-person hackathon in 70+ cities.</p>
+          </li>
+          <li class="polaroid reveal" style="--tilt: 3deg">
+            <h3>Daydream</h3>
+            <button class="polaroid__video" type="button" data-video="vvdoW2gh9YU" data-video-title="Daydream">
+              <img src="images/daydream-pic.webp" alt="" loading="lazy" width="700" height="388" />
+              <span class="play" aria-hidden="true"></span>
+              <span class="sr-only">Watch the Daydream video</span>
+            </button>
+            <p>Students led game jams in 200 cities worldwide, from London to NYC to Penang!</p>
+          </li>
+          <li class="polaroid reveal" style="--tilt: -2deg">
+            <h3>Campfire</h3>
+            <button class="polaroid__video" type="button" data-video="0aMAHuLxg3s" data-video-title="Campfire">
+              <img src="images/scrapyard-pic-2.webp" alt="" loading="lazy" width="700" height="467" style="object-position: bottom" />
+              <span class="play" aria-hidden="true"></span>
+              <span class="sr-only">Watch the Campfire video</span>
+            </button>
+            <p>Our largest game jam yet: 10k teens, 1 weekend, making games at the same time!</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ───────────── FAQ ───────────── -->
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <img class="faq__bush faq__bush--l" src="images/faq/bushes-1.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img class="faq__bush faq__bush--r" src="images/faq/bushes-2.webp" alt="" aria-hidden="true" loading="lazy" />
+        <h2 class="faq__title" id="faq-title">FAQ</h2>
+
+        <div class="pond">
+          <div class="faq__col">
+            <details class="qa" name="faq">
+              <summary>Am I eligible?</summary>
+              <div class="qa__a"><p>If you’re aged 13–18, you’re eligible! No prior experience required.</p></div>
+            </details>
+            <details class="qa" name="faq">
+              <summary>Is this free?</summary>
+              <div class="qa__a"><p>Yes! Hack Club is a nonprofit helping teens build technical projects at no cost.</p></div>
+            </details>
+            <details class="qa" name="faq">
+              <summary>But I’ve never coded before!</summary>
+              <div class="qa__a"><p>Perfect! Game jams are designed for beginners. You’ll have workshops, mentors, and teammates to help you every step of the way.</p></div>
+            </details>
+            <details class="qa" name="faq">
+              <summary>What if my parents are concerned?</summary>
+              <div class="qa__a"><p>We’re here to help! You can see our <a href="https://docs.google.com/document/d/1f_uFvFP4gD01YhXBmU9jBfEBU9QMvr1L5yJTKWBBhbA/edit?usp=sharing" target="_blank" rel="noopener">parent guide here</a>, or they can reach out to us at <a href="mailto:haven@hackclub.com">haven@hackclub.com</a> with any questions.</p></div>
+            </details>
+            <details class="qa" name="faq">
+              <summary>I still have questions!</summary>
+              <div class="qa__a"><p>Join <b>#haven-help</b> on <a href="https://hackclub.com/slack/" target="_blank" rel="noopener">Slack</a> or reach out to us at <a href="mailto:haven@hackclub.com">haven@hackclub.com</a>!</p></div>
+            </details>
+          </div>
+          <div class="faq__col">
+            <details class="qa" name="faq">
+              <summary>Can I organise a Haven?</summary>
+              <div class="qa__a"><p>Absolutely! We’re always looking for passionate organisers. If you’re ready to bring the magic of game development to your community, we’d love to help.</p></div>
+            </details>
+            <details class="qa" name="faq">
+              <summary>Why should I organise a Haven?</summary>
+              <div class="qa__a"><p>You’ll make an impact on your community, whether inspiring someone to make their first game or helping someone find friends in tech. Leading an event is usually very difficult, but we’re providing support to help you along the way!</p></div>
+            </details>
+            <details class="qa" name="faq">
+              <summary>What are the steps to organising?</summary>
+              <div class="qa__a"><p>First, apply through our <a href="https://haven.hackclub.com/api/auth/redirect">organiser form</a>. Then we’ll guide you through venue booking, team building, workshop planning, and day-of coordination.</p></div>
+            </details>
+            <details class="qa" name="faq">
+              <summary>Do we get volunteer hours?</summary>
+              <div class="qa__a"><p>Many schools accept organising hours as community service. If your school requires documentation, we can provide it!</p></div>
+            </details>
+            <details class="qa" name="faq">
+              <summary>Can I join an organising team?</summary>
+              <div class="qa__a"><p>Of course! Many cities have organising teams. Reach out to organisers in your area or apply to join an existing team.</p></div>
+            </details>
+          </div>
+        </div>
+
+        <div class="final-cta" id="join">
+          <img class="final-cta__arrow final-cta__arrow--l" src="images/footer/arrow.webp" alt="" aria-hidden="true" loading="lazy" width="623" height="608" />
+          <div class="final-cta__body">
+            <p class="final-cta__lead">Ready to make a game?</p>
+            <form class="signup signup--green" method="get" action="https://forms.hackclub.com/haven-signup">
+              <input type="hidden" name="event" value="recMj0szod8LoeaUT" />
+              <label for="signup-email-2" class="sr-only">Your email address</label>
+              <input id="signup-email-2" class="signup__input" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="you@hackclub.com" />
+              <button class="signup__button" type="submit">Sign up!</button>
+            </form>
+          </div>
+          <img class="final-cta__arrow final-cta__arrow--r" src="images/footer/arrow.webp" alt="" aria-hidden="true" loading="lazy" width="623" height="608" />
+        </div>
+        <img class="faq__bush faq__bush--bl" src="images/faq/bushes-5.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img class="faq__bush faq__bush--br" src="images/faq/bushes-4.webp" alt="" aria-hidden="true" loading="lazy" />
+      </section>
+    </main>
+
+    <!-- ───────────── Footer ───────────── -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="images/logo.webp" alt="Hack Club Haven" width="762" height="491" loading="lazy" />
+          <ul>
+            <li><a href="https://hackclub.com">Hack Club</a></li>
+            <li><a href="https://hackclub.com/slack/">Slack</a></li>
+            <li><a href="https://hackclub.com/clubs/">Clubs</a></li>
+            <li><a href="https://hackathons.hackclub.com">Hackathons</a></li>
+          </ul>
+        </div>
+        <div class="footer__text">
+          <p>Hack Club is a 501(c)(3) nonprofit and network of 100k+ technical high schoolers. We believe you learn best by building, so we’re creating community and providing grants so you can make awesome projects. In the past few years, we’ve <a href="https://www.youtube.com/watch?v=ufMUJ9D1fi8">sent 30 teen hackers hiking the Pacific Crest Trail</a>, <a href="https://www.youtube.com/watch?v=8iM1W8kXrQA">hosted a hackathon for the worst ideas</a>, and <a href="https://www.youtube.com/watch?v=kaEFv7e49mo">ran the largest teen hardware hackathon at GitHub HQ</a>.</p>
+          <p>Read about Hack Club in <a href="https://www.wsj.com/articles/teen-hackers-try-to-convince-parents-they-are-up-to-good-11569922200">The Wall Street Journal</a>, <a href="https://www.cbsnews.com/sanfrancisco/news/hack-club-hosts-teen-coders-san-francisco/">CBS News</a>, and <a href="https://www.nasa.gov/learning-resources/space-out-this-summer-with-variety-of-nasa-stem-activities/">NASA.gov</a>, or watch us <a href="https://www.youtube.com/live/UbfAhFxDomE?si=5DiK1_hGqKrB_r50&amp;t=7033">on stage with AMD CEO Lisa Su at CES</a>.</p>
+          <p>Made with ♥ by teenagers, for teenagers at Hack Club</p>
+        </div>
+      </div>
+      <img class="footer__bushes" src="images/footer/bottom-bushes.webp" alt="" aria-hidden="true" loading="lazy" width="2147" height="415" />
+    </footer>
+
+    <!-- Sticky mobile sign-up -->
+    <a class="sticky-cta" href="#signup" data-sticky-cta aria-hidden="true" tabindex="-1">Sign up for Haven Canberra</a>
+
+    <!-- Video lightbox -->
+    <dialog class="lightbox" data-lightbox aria-label="Video">
+      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close video">×</button>
+      <div class="lightbox__frame" data-lightbox-frame></div>
+    </dialog>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
